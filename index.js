@@ -58,3 +58,18 @@ console.log('robot start');
 //         content: [Function] },
 //     reply: [Function] 
 // }
+
+
+// {
+//     type: 'message',
+//     replyToken: 'c4a8a662e5e04920bd8da97748e5ce57',
+//     source: {
+//         groupId: 'C90b1262f17f31ddfd778b6c930717377',
+//         userId: 'Ud0ad16cde89d20964bec951d174b7e0d',
+//         type: 'group',
+//         profile: [Function]
+//     },
+//     timestamp: 1505642628993,
+//     message: { type: 'image', id: '6709870643803', content: [Function] },
+//     reply: [Function]
+// }
