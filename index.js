@@ -878,7 +878,7 @@ bot.on('message', function(e) {
         var txt = txt.slice(1).split('-');
         var prefix = txt[0];
         var suffix = txt[1];
-        console.log(prefix,suffix);
+        //console.log(prefix,suffix);
         
         var q = e.reply;
         var s = [];
@@ -887,7 +887,7 @@ bot.on('message', function(e) {
             //no suffix
             if(prefix == 'help'){
                 for (var e in data) {
-                    console.log(e,data[e].txt);
+                    //console.log(e,data[e].txt);
                     s.push('/'+e + '   ' + data[e].txt);
                 };
                 q(s.join('\n'));
