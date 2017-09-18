@@ -871,10 +871,10 @@ bot.on('message', function(e) {
     if(e.type == 'message' && e.message.type == 'text'){
         var txt = e.message.text.toLowerCase();
         if(txt.indexOf('/') != 0){
-            console.log('no command');
+            //console.log('no command');
             return;
         };
-        console.log(txt);
+        //console.log(txt);
         var txt = txt.slice(1).split('-');
         var prefix = txt[0];
         var suffix = txt[1];
