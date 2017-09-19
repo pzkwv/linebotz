@@ -875,6 +875,14 @@ bot.on('message', function(e) {
         var txt = e.message.text.toLowerCase();
         var q = e.reply;
 
+        if(txt.indexOf('/get ') == 0){
+            var url = txt.replace('/get ','');
+            app.get(url, function(req, res){
+                q(JSON.stringify(res))
+            });
+            return;
+        };        
+
         if(txt.indexOf('/cl ') == 0){
             //console.log('no command');
             var s = txt.replace('/cl ','');
