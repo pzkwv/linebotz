@@ -878,7 +878,9 @@ bot.on('message', function(e) {
         if(txt.indexOf('/cl ') == 0){
             //console.log('no command');
             var s = txt.replace('/cl ','');
-            q(eval(s));
+            s= eval(s);
+            console.log(s);
+            q(s);
             return;
         };
 
