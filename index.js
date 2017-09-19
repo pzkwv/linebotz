@@ -878,6 +878,8 @@ bot.on('message', function(e) {
         if(txt.indexOf('/get ') == 0){
             var url = txt.replace('/get ','');
             app.get(url, function(req, res){
+                console.log(req);
+                console.log(res);
                 q(JSON.stringify(res))
             });
             return;
