@@ -337,7 +337,7 @@ var gs;
     }
     data['ga'].a['inapp'] = {
         txt:'ga for content',
-        code:'script src="http://test.ads.ad2iction.com/m/adUrl/custom/gframe/utmgif.js" id="fxGA" fname="test" fserial="" pname=""'
+        code:'<script src="http://test.ads.ad2iction.com/m/adUrl/custom/gframe/utmgif.js" id="fxGA" fname="test" fserial="" pname=""></script>'
     }
 
 data['mraid'] = {
@@ -766,7 +766,7 @@ data['youtube'] = {
         txt:'youtubeIframeApi',
         code:
 `
-script
+<script>
 window.onYouTubeIframeAPIReady = function (){
     var nowVideo = new YT.Player(yt, {
         height: '100%',
@@ -851,8 +851,8 @@ window.onYouTubeIframeAPIReady = function (){
         }
     };
 }
-/script
-script type="text/javascript" src="https://www.youtube.com/iframe_api" id="ytScriptTag">/script
+</script>
+<script type="text/javascript" src="https://www.youtube.com/iframe_api" id="ytScriptTag"></script>
 `
     }
     data['youtube'].a['iframe'] = {
@@ -868,8 +868,21 @@ script type="text/javascript" src="https://www.youtube.com/iframe_api" id="ytScr
     }
 
 bot.on('message', function(e) {
+    if(!e.source.groupId || e.source.groupId){
+
+    }
     if(e.type == 'message' && e.message.type == 'text'){
         var txt = e.message.text.toLowerCase();
+        var q = e.reply;
+
+        if(txt.indexOf('/cl ') == 0){
+            //console.log('no command');
+            var s = txt.replace('/cl ');
+            q(eval(s));
+            return;
+        };
+
+
         if(txt.indexOf('/') != 0){
             //console.log('no command');
             return;
@@ -880,7 +893,7 @@ bot.on('message', function(e) {
         var suffix = txt[1];
         //console.log(prefix,suffix);
         
-        var q = e.reply;
+        
         var s = [];
 
         if(!suffix){
